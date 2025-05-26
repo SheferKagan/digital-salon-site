@@ -1,0 +1,40 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Salon</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Digital Salon</h1>
+      <p class="subtext">השאירו פרטים + קישור לעמוד העסקי שלכם<br>ונחזור אליכם עם רעיון קידום מותאם אישית!</p>
+    </header>
+    <main>
+      <form id="leadForm">
+        <input type="text" id="name" name="name" placeholder="שם מלא" required>
+        <input type="email" id="email" name="email" placeholder="כתובת מייל" required
+        oninvalid="this.setCustomValidity('נא להזין כתובת מייל חוקית')"
+        oninput="this.setCustomValidity('')">
+        <input type="url" id="link" name="link" placeholder="קישור לעמוד העסקי (פייסבוק / אינסטגרם)" required
+        oninvalid="this.setCustomValidity('נא להזין קישור תקין (כולל https)')"
+        oninput="this.setCustomValidity('')">>
+        <textarea id="extra" name="extra" rows="4" placeholder="רוצים שנדע משהו נוסף? (אופציונלי)"></textarea>
+        <button type="submit">שלחו לי רעיון קידום 🔥</button>
+      </form>
+    </main>
+    <section class="about">
+      <h2>מי אנחנו?</h2>
+      <p>אנחנו צוות צעיר ודינמי, שמתמחה בפרסום ממומן, קריאייטיב, סרטוני UGC ואסטרטגיות שיווק חדשניות בפייסבוק, אינסטגרם וטיקטוק.</p>
+      <p>המטרה שלנו היא להפוך כל עמוד עסקי למכונה של תוצאות, בעזרת חשיבה יצירתית, חיבור נכון לקהל וטכנולוגיה מתקדמת.</p>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
