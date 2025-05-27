@@ -1,40 +1,86 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Salon</title>
+  <title>Digital Salon - קידום דיגיטלי מתקדם</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='15' fill='%23000'/%3E%3Crect x='15' y='65' width='12' height='20' fill='%23FDC500'/%3E%3Crect x='32' y='50' width='12' height='35' fill='%23FDC500'/%3E%3Crect x='49' y='35' width='12' height='50' fill='%23FDC500'/%3E%3Crect x='66' y='40' width='12' height='45' fill='%23FDC500'/%3E%3Cpath d='M58 30 L75 15 L70 10 L58 20 L46 10 L41 15 Z' fill='%23FDC500'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator">
+    <div class="scroll-progress"></div>
+  </div>
+
+  <!-- Animated background particles -->
+  <div class="particles"></div>
+
   <div class="container">
     <header>
+      <div class="logo">
+        <svg viewBox="0 0 100 100">
+          <defs>
+            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#FDC500;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#FF6B6B;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <!-- Chart bars -->
+          <rect x="15" y="65" width="12" height="20" fill="url(#logoGradient)" rx="2"/>
+          <rect x="32" y="50" width="12" height="35" fill="url(#logoGradient)" rx="2"/>
+          <rect x="49" y="35" width="12" height="50" fill="url(#logoGradient)" rx="2"/>
+          <rect x="66" y="40" width="12" height="45" fill="url(#logoGradient)" rx="2"/>
+          <!-- Growth arrow -->
+          <path d="M58 30 L75 15 L70 10 L58 20 L46 10 L41 15 Z" fill="url(#logoGradient)"/>
+          <!-- Sparkle effects -->
+          <circle cx="25" cy="45" r="2" fill="#fff" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="75" cy="25" r="1.5" fill="#fff" opacity="0.6">
+            <animate attributeName="opacity" values="0.6;0.2;0.6" dur="1.5s" repeatCount="indefinite"/>
+          </circle>
+        </svg>
+      </div>
       <h1>Digital Salon</h1>
-      <p class="subtext">השאירו פרטים + קישור לעמוד העסקי שלכם<br>ונחזור אליכם עם רעיון קידום מותאם אישית!</p>
+      <p class="subtext">השאירו פרטים + קישור לעמוד העסקי שלכם<br>ונחזור אליכם עם רעיון קידום מותאם אישית! 🚀</p>
     </header>
+
     <main>
-      <form id="leadForm">
-        <input type="text" id="name" name="name" placeholder="שם מלא" required>
-        <input type="email" id="email" name="email" placeholder="כתובת מייל" required
-        oninvalid="this.setCustomValidity('נא להזין כתובת מייל חוקית')"
-        oninput="this.setCustomValidity('')">
-        <input type="url" id="link" name="link" placeholder="קישור לעמוד העסקי (פייסבוק / אינסטגרם)" required
-        oninvalid="this.setCustomValidity('נא להזין קישור תקין (כולל https)')"
-        oninput="this.setCustomValidity('')">>
-        <textarea id="extra" name="extra" rows="4" placeholder="רוצים שנדע משהו נוסף? (אופציונלי)"></textarea>
-        <button type="submit">שלחו לי רעיון קידום 🔥</button>
-      </form>
+      <div class="form-container">
+        <form id="leadForm">
+          <div class="input-group">
+            <input type="text" id="name" name="name" placeholder="שם מלא ✨" required>
+          </div>
+          <div class="input-group">
+            <input type="email" id="email" name="email" placeholder="כתובת מייל 📧" required>
+          </div>
+          <div class="input-group">
+            <input type="url" id="link" name="link" placeholder="קישור לעמוד העסקי (פייסבוק / אינסטגרם) 🔗" required>
+          </div>
+          <div class="input-group">
+            <textarea id="extra" name="extra" rows="4" placeholder="רוצים שנדע משהו נוסף? (אופציונלי) 💭"></textarea>
+          </div>
+          <button type="submit" class="submit-btn">
+            <span class="btn-text">שלחו לי רעיון קידום 🔥</span>
+            <div class="loading-spinner"></div>
+          </button>
+        </form>
+      </div>
     </main>
+
     <section class="about">
       <h2>מי אנחנו?</h2>
       <p>אנחנו צוות צעיר ודינמי, שמתמחה בפרסום ממומן, קריאייטיב, סרטוני UGC ואסטרטגיות שיווק חדשניות בפייסבוק, אינסטגרם וטיקטוק.</p>
-      <p>המטרה שלנו היא להפוך כל עמוד עסקי למכונה של תוצאות, בעזרת חשיבה יצירתית, חיבור נכון לקהל וטכנולוגיה מתקדמת.</p>
+      <p>המטרה שלנו היא להפוך כל עמוד עסקי למכונה של תוצאות, בעזרת חשיבה יצירתית, חיבור נכון לקהל וטכנולוגיה מתקדמת. 💪</p>
     </section>
   </div>
+
+  <!-- Success message -->
+  <div id="successMessage" class="success-message">
+    ✅ הפרטים נשלחו בהצלחה!<br>נחזור אליכם בהקדם עם רעיון מותאם אישית
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
