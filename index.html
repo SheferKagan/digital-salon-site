@@ -3,678 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Salon - קידום דיגיטלי מתקדם</title>
+  <title>פוליס לאטצ'י נדל"ן יוקרה</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: #ffffff;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-
-    /* Animated background particles */
-    .particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .particle {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 1; }
-      50% { transform: translateY(-20px) rotate(180deg); opacity: 0.3; }
-    }
-
-    .container {
-      position: relative;
-      z-index: 2;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    /* Header with logo */
-    header {
-      text-align: center;
-      padding: 2rem 0 1rem 0;
-      animation: fadeInDown 1s ease-out;
-    }
-
-    .logo {
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 1rem;
-      background: #000;
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    .logo svg {
-      width: 80px;
-      height: 80px;
-      fill: #fff;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 8vw, 4rem);
-      font-weight: 800;
-      background: linear-gradient(45deg, #ff6b6b, #ffd93d, #6bcf7f, #4ecdc4);
-      background-size: 300% 300%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: gradientShift 3s ease-in-out infinite;
-      margin-bottom: 1rem;
-      text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    @keyframes gradientShift {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
-
-    .subtext {
-      font-size: clamp(1rem, 3vw, 1.3rem);
-      color: rgba(255, 255, 255, 0.9);
-      line-height: 1.6;
-      max-width: 600px;
-      margin: 0 auto;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Main form section */
-    main {
-      padding: 1.5rem 0;
-      animation: fadeInUp 1s ease-out 0.3s both;
-    }
-
-    .form-container {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(20px);
-      border-radius: 25px;
-      padding: 3rem;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .input-group {
-      position: relative;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 1.2rem 1.5rem;
-      border: none;
-      border-radius: 15px;
-      background: rgba(255, 255, 255, 0.9);
-      color: #333;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    input:focus, textarea:focus {
-      outline: none;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      background: rgba(255, 255, 255, 1);
-    }
-
-    input::placeholder, textarea::placeholder {
-      color: #888;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .submit-btn {
-      background: linear-gradient(45deg, #ff6b6b, #ff8e53);
-      color: white;
-      padding: 1.2rem 2rem;
-      border: none;
-      border-radius: 15px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .submit-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
-    }
-
-    .submit-btn:active {
-      transform: translateY(-1px);
-    }
-
-    .submit-btn.loading {
-      pointer-events: none;
-      opacity: 0.8;
-    }
-
-    .submit-btn .btn-text {
-      transition: opacity 0.3s ease;
-    }
-
-    .submit-btn.loading .btn-text {
-      opacity: 0;
-    }
-
-    .loading-spinner {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 20px;
-      height: 20px;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      border-top: 2px solid white;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .submit-btn.loading .loading-spinner {
-      opacity: 1;
-    }
-
-    @keyframes spin {
-      0% { transform: translate(-50%, -50%) rotate(0deg); }
-      100% { transform: translate(-50%, -50%) rotate(360deg); }
-    }
-
-    /* About section */
-    .about {
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(20px);
-      padding: 3rem;
-      border-radius: 25px;
-      margin: 4rem auto;
-      max-width: 800px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      animation: fadeInUp 1s ease-out 0.6s both;
-    }
-
-    .about h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      background: linear-gradient(45deg, #4facfe, #00f2fe);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    .about p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    /* Success message */
+    body { margin: 0; font-family: 'Segoe UI', Tahoma, sans-serif; background: #0a0a0a; color: #fff; }
+    .particles { position: fixed; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+    .particle { position: absolute; width: 4px; height: 4px; background: rgba(255,255,255,0.2); border-radius: 50%; animation: float 6s ease-in-out infinite; }
+    @keyframes float { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-20px); } }
+    .container { max-width: 1200px; margin: auto; padding: 2rem; position: relative; z-index: 1; }
+    h1 { font-size: 2.5rem; text-align: center; color: gold; }
+    form { max-width: 600px; margin: 2rem auto; background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 15px; }
+    input, textarea { width: 100%; padding: 1rem; margin: 0.5rem 0; border-radius: 10px; border: none; font-size: 1rem; }
+    
+.submit-btn {
+  display: block;
+  margin: 2rem auto 0 auto;
+  padding: 1.2rem 3rem;
+  font-size: 1.25rem;
+  background: linear-gradient(135deg, #FFD700, #D4AF37);
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+}
+.submit-btn:hover {
+  background: linear-gradient(135deg, #FFE066, #C5A100);
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.6);
+}
+    .property-card { background: rgba(255,255,255,0.05); margin: 2rem 0; padding: 1rem; border-radius: 10px; opacity: 0; transform: translateY(40px); transition: all 0.6s ease; }
+    .property-card.visible { opacity: 1; transform: translateY(0); }
+    
+.property-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
     .success-message {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0);
-      background: linear-gradient(45deg, #4facfe, #00f2fe);
-      color: white;
-      padding: 2rem 3rem;
-      border-radius: 20px;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-      z-index: 1000;
-      text-align: center;
-      font-size: 1.2rem;
-      font-weight: 600;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #10b981;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(16,185,129,0.3);
+  font-size: 1.2rem;
+  z-index: 9999;
+}
 
-    .success-message.show {
-      transform: translate(-50%, -50%) scale(1);
-    }
-
-    /* Contact Information Section */
-    .contact-info {
-      background: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(20px);
-      padding: 3rem;
-      border-radius: 25px;
-      margin: 3rem auto;
-      max-width: 900px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      animation: fadeInUp 1s ease-out 0.9s both;
-    }
-
-    .contact-info h2 {
-      font-size: 2.3rem;
-      font-weight: 700;
-      background: linear-gradient(45deg, #ff6b6b, #ffd93d);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 1.5rem;
-      border-radius: 15px;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .contact-item:hover {
-      transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.1);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .contact-icon {
-      font-size: 2rem;
-      margin-left: 1rem;
-      width: 50px;
-      text-align: center;
-    }
-
-    .contact-details h3 {
-      color: #ffd93d;
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-
-    .contact-details p {
-      color: rgba(255, 255, 255, 0.9);
-      font-size: 0.95rem;
-      margin: 0;
-    }
-
-    .social-links {
-      text-align: center;
-    }
-
-    .social-links h3 {
-      color: #4ecdc4;
-      font-size: 1.3rem;
-      margin-bottom: 1.5rem;
-      font-weight: 600;
-    }
-
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .social-link {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-      text-decoration: none;
-      padding: 0.8rem 1.2rem;
-      border-radius: 25px;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      font-weight: 500;
-    }
-
-    .social-link:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    }
-
-    .social-link.instagram:hover {
-      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    }
-
-    .social-link.facebook:hover {
-      background: #1877f2;
-    }
-
-    .social-link.tiktok:hover {
-      background: linear-gradient(45deg, #ff0050, #00f2ea);
-    }
-
-    .social-link.linkedin:hover {
-      background: #0077b5;
-    }
-
-    .social-icon {
-      font-size: 1.2rem;
-    }
-
-    /* Mobile optimizations */
-    @media (max-width: 768px) {
-      .contact-info {
-        padding: 2rem 1.5rem;
-        margin: 3rem 1rem;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-
-      .contact-item {
-        padding: 1rem;
-      }
-
-      .social-icons {
-        gap: 0.8rem;
-      }
-
-      .social-link {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-      }
-    }
-    @media (max-width: 768px) {
-      .container {
-        padding: 0 1rem;
-      }
-
-      .form-container {
-        padding: 2rem 1.5rem;
-        margin: 0 1rem;
-      }
-
-      .about {
-        padding: 2rem 1.5rem;
-        margin: 3rem 1rem;
-      }
-
-      .logo {
-        width: 120px;
-        height: 120px;
-      }
-
-      .logo svg {
-        width: 70px;
-        height: 70px;
-      }
-
-      .contact-info {
-        padding: 2rem 1.5rem;
-        margin: 3rem 1rem;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-
-      .contact-item {
-        padding: 1rem;
-      }
-
-      .social-icons {
-        gap: 0.8rem;
-      }
-
-      .social-link {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-      }
-    }
-
-    /* Animations */
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Scroll indicator */
-    .scroll-indicator {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: rgba(255, 255, 255, 0.1);
-      z-index: 1000;
-    }
-
-    .scroll-progress {
-      height: 100%;
-      background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
-      width: 0%;
-      transition: width 0.1s ease;
-    }
   </style>
 </head>
 <body>
-  <!-- Scroll indicator -->
-  <div class="scroll-indicator">
-    <div class="scroll-progress"></div>
-  </div>
-
-  <!-- Animated background particles -->
+  <div class="scroll-progress"></div>
   <div class="particles"></div>
+  <div id="successMessage" class="success-message">✅ הפרטים נשלחו בהצלחה!</div>
 
   <div class="container">
-    <header>
-      <h1>Digital Salon</h1>
-      <p class="subtext">השאירו פרטים + קישור לעמוד העסקי שלכם<br>ונחזור אליכם עם רעיון קידום מותאם אישית! 🚀</p>
-    </header>
+    <h1>נכסי יוקרה בפוליס לאטצ'י</h1>
+    <form id="leadForm">
+      <input type="text" id="name" name="name" placeholder="שם מלא ✨" required>
+      <input type="email" id="email" name="email" placeholder="כתובת מייל 📧" required>
+      <input type="url" id="link" name="link" placeholder="קישור לנכס 🔗">
+      <textarea id="extra" name="extra" placeholder="פרטים נוספים..."></textarea>
+      <button type="submit" class="submit-btn">שלח</button>
+    </form>
 
-    <main>
-      <div class="form-container">
-        <form id="leadForm">
-          <div class="input-group">
-            <input type="text" id="name" name="name" placeholder="שם מלא ✨" required>
-          </div>
-          <div class="input-group">
-            <input type="email" id="email" name="email" placeholder="כתובת מייל 📧" required>
-          </div>
-          <div class="input-group">
-            <input type="url" id="link" name="link" placeholder="קישור לעמוד העסקי (פייסבוק / אינסטגרם) 🔗" required>
-          </div>
-          <div class="input-group">
-            <textarea id="extra" name="extra" rows="4" placeholder="רוצים שנדע משהו נוסף? (אופציונלי) 💭"></textarea>
-          </div>
-          <button type="submit" class="submit-btn">
-            <span class="btn-text">שלחו לי רעיון קידום 🔥</span>
-            <div class="loading-spinner"></div>
-          </button>
-        </form>
-      </div>
-    </main>
-
-    <section class="about">
-      <h2>מי אנחנו?</h2>
-      <p>אנחנו צוות צעיר ודינמי, שמתמחה בפרסום ממומן, קריאייטיב, סרטוני UGC ואסטרטגיות שיווק חדשניות בפייסבוק, אינסטגרם וטיקטוק.</p>
-      <p>המטרה שלנו היא להפוך כל עמוד עסקי למכונה של תוצאות, בעזרת חשיבה יצירתית, חיבור נכון לקהל וטכנולוגיה מתקדמת. 💪</p>
+    <section style="background: linear-gradient(to right, #1C1C1C, #0A0A0A); border-radius: 20px; padding: 2rem; margin-top: 3rem;">
+      <h2 style="text-align: center; color: gold; font-size: 2rem;">אודותינו</h2>
+      <p style="line-height: 2; font-size: 1.1rem;">
+        ברוכים הבאים לפוליס לאטצ'י פרימיום נדל"ן – המומחים המובילים בנכסי יוקרה בקפריסין. אנו מתמחים בנכסי יוקרה ייחודיים באזור פוליס ולאטצ'י, אחד האזורים הציוריים והמבוקשים ביותר בקפריסין!<br><br>
+        עם ניסיון של מעל <strong style="color: gold;">15 שנה</strong> בשוק הנדל"ן הקפריסאי, אנו מציעים שירות מקצועי ואישי ללקוחותינו. הצוות שלנו מורכב ממומחי נדל"ן | מנוסים הדוברים עברית, אנגלית ויוונית.<br><br>
+        אנו מתמחים בווילות יוקרה מול הים, דירות פנטהאוז, ונכסי השקעה מניבים. כל נכס בקטלוג שלנו נבחר בקפידה ועומד בסטנדרטים הגבוהים ביותר של איכות, מיקום ופוטנציאל השקעה.
+      </p>
     </section>
 
-    <!-- Contact Information Section -->
-    <section class="contact-info">
-      <h2>בואו נתחבר!</h2>
-      <div class="contact-grid">
-        <div class="contact-item">
-          <div class="contact-icon">📱</div>
-          <div class="contact-details">
-            <h3>טלפון</h3>
-            <p>050-123-4567</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📧</div>
-          <div class="contact-details">
-            <h3>אימייל</h3>
-            <p>hello@digitalsalon.co.il</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div class="contact-details">
-            <h3>מיקום</h3>
-            <p>תל אביב, ישראל</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">🕒</div>
-          <div class="contact-details">
-            <h3>שעות פעילות</h3>
-            <p>ראשון-חמישי: 9:00-18:00</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="social-links">
-        <h3>עקבו אחרינו ברשתות:</h3>
-        <div class="social-icons">
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="social-link instagram">
-            <span class="social-icon">📷</span>
-            <span>Instagram</span>
-          </a>
-          <a href="#" class="social-link facebook">
-            <span class="social-icon">📘</span>
-            <span>Facebook</span>
-          </a>
-          <a href="#" class="social-link tiktok">
-            <span class="social-icon">🎵</span>
-            <span>TikTok</span>
-          </a>
-          <a href="#" class="social-link linkedin">
-            <span class="social-icon">💼</span>
-            <span>LinkedIn</span>
-          </a>
-        </div>
-      </div>
-    </section>
-  </div>
 
-  <!-- Success message -->
-  <div id="successMessage" class="success-message">
-    ✅ הפרטים נשלחו בהצלחה!<br>נחזור אליכם בהקדם עם רעיון מותאם אישית
+    <div class="property-card"><div class="property-image"><img src="final_assets/neve-residence.jpg" alt="Neve Residence" loading="lazy"></div>
+      <h3>דירה בפרויקט Neve Residence</h3>
+      <p>מספר נכס: 204<br>עיר: לימסול<br>אזור: אגיוס ניקולאוס</p>
+      <strong>€289,000 + מע״מ</strong>
+    </div>
+
+    <div class="property-card"><div class="property-image"><img src="final_assets/traditional-cyprus.jpg" alt="Traditional Cyprus Home" loading="lazy"></div>
+      <h3>בית מסורתי באי</h3>
+      <p>בית בעיצוב קפריסאי קלאסי ליד חוף לאטצ'י</p>
+      <strong>€380,000</strong>
+    </div>
   </div>
 
   <script>
-    // Create animated particles
+    // Particle generation
     function createParticles() {
-      const particlesContainer = document.querySelector('.particles');
-      const particleCount = window.innerWidth > 768 ? 50 : 25;
-      
-      for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.top = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 6 + 's';
-        particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
-        particlesContainer.appendChild(particle);
+      const container = document.querySelector('.particles');
+      const count = 50;
+      for (let i = 0; i < count; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.style.left = Math.random() * 100 + '%';
+        p.style.top = Math.random() * 100 + '%';
+        p.style.animationDelay = Math.random() * 6 + 's';
+        container.appendChild(p);
       }
     }
 
-    // Update scroll progress indicator
-    function updateScrollProgress() {
-      const scrollTop = window.pageYOffset;
-      const docHeight = document.body.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollTop / docHeight) * 100;
-      document.querySelector('.scroll-progress').style.width = scrollPercent + '%';
-    }
+    // Scroll fade-in
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+    document.querySelectorAll('.property-card').forEach(card => observer.observe(card));
 
-    // Form submission with improved UX
+    // Lead form submission
     document.getElementById('leadForm').addEventListener('submit', async function (e) {
       e.preventDefault();
-      
-      const submitBtn = this.querySelector('.submit-btn');
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       const link = document.getElementById('link').value.trim();
       const extra = document.getElementById('extra').value.trim();
+      const btn = this.querySelector('button');
 
-      // Email validation
-      if (!email.includes('@')) {
-        showError('כתובת מייל לא תקינה. שכחת "@" אולי?');
-        return;
-      }
+      if (!email.includes('@')) return alert('מייל לא תקין');
 
-      // URL validation
-      if (!link.startsWith('http://') && !link.startsWith('https://')) {
-        showError('נא להזין קישור תקין (צריך להתחיל ב-http או https)');
-        return;
-      }
-
-      // Show loading state
-      submitBtn.classList.add('loading');
-
+      btn.disabled = true;
       const formData = new FormData();
       formData.append('שם', name);
       formData.append('אימייל', email);
@@ -682,84 +143,20 @@
       formData.append('הערות', extra);
 
       try {
-        const response = await fetch('https://script.google.com/macros/s/AKfycbwAeCv7jySowQrJEmQ3mPpzCwHvRzStxELHciWBGiORFp__TKheOrSOsGPL8XevnKkaew/exec', {
+        await fetch('https://script.google.com/macros/s/AKfycbwAeCv7jySowQrJEmQ3mPpzCwHvRzStxELHciWBGiORFp__TKheOrSOsGPL8XevnKkaew/exec', {
           method: 'POST',
           body: formData
         });
-
-        // Show success message
-        showSuccessMessage();
-        
-        // Reset form
+        document.getElementById('successMessage').style.display = 'block';
         this.reset();
-        
-      } catch (error) {
-        showError('הייתה שגיאה בשליחת הפרטים. אנא נסה שוב.');
+      } catch (err) {
+        alert('שגיאה בשליחה. נסה שוב.');
       } finally {
-        // Remove loading state
-        submitBtn.classList.remove('loading');
+        btn.disabled = false;
       }
     });
 
-    function showSuccessMessage() {
-      const successMsg = document.getElementById('successMessage');
-      successMsg.classList.add('show');
-      
-      setTimeout(() => {
-        successMsg.classList.remove('show');
-      }, 4000);
-    }
-
-    function showError(message) {
-      // Create a temporary error message
-      const errorMsg = document.createElement('div');
-      errorMsg.style.cssText = `
-        position: fixed;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: linear-gradient(45deg, #ff6b6b, #ff5252);
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
-        z-index: 1000;
-        font-weight: 600;
-        animation: slideDown 0.3s ease-out;
-      `;
-      errorMsg.textContent = message;
-      document.body.appendChild(errorMsg);
-      
-      setTimeout(() => {
-        errorMsg.style.animation = 'slideUp 0.3s ease-out forwards';
-        setTimeout(() => document.body.removeChild(errorMsg), 300);
-      }, 3000);
-    }
-
-    // Initialize
-    document.addEventListener('DOMContentLoaded', function() {
-      createParticles();
-      window.addEventListener('scroll', updateScrollProgress);
-      
-      // Add smooth scrolling for mobile
-      if (window.innerWidth <= 768) {
-        document.body.style.scrollBehavior = 'smooth';
-      }
-    });
-
-    // Add CSS animations for error messages
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes slideDown {
-        from { transform: translate(-50%, -100%); opacity: 0; }
-        to { transform: translate(-50%, 0); opacity: 1; }
-      }
-      @keyframes slideUp {
-        from { transform: translate(-50%, 0); opacity: 1; }
-        to { transform: translate(-50%, -100%); opacity: 0; }
-      }
-    `;
-    document.head.appendChild(style);
+    document.addEventListener('DOMContentLoaded', createParticles);
   </script>
 </body>
 </html>
