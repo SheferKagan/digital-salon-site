@@ -46,18 +46,18 @@
     .info-section p { line-height: 2; font-size: 1.1rem; }
     .sold-badge {
       position: absolute;
-      top: 70px;            /* move lower into the card */
+      top: 230px;            /* move lower into the card */
       left: 0px;           /* move toward the center of the card */
       background: #FFD700;
       color: black;
       transform: rotate(-45deg);
-      width: 200px;
+      width: 400px;
       text-align: center;
       font-weight: bold;
-      font-size: 0.95rem;
+      font-size: 1.2rem;
       box-shadow: 0 3px 10px rgba(0,0,0,0.3);
       z-index: 10;
-      padding: 4px 0;
+      padding: 10px 0;
     }
 
   .property-card {
@@ -108,7 +108,156 @@
         font-size: 0.95rem;
       }
     }
-    </style>
+    
+body {
+  background: linear-gradient(to bottom, #f2f9ff, #e1f0ff, #cce7ff);
+  color: #222;
+}
+
+.info-section {
+  background: rgba(255, 255, 255, 0.85);
+  color: #333;
+}
+
+.info-section h2 {
+  color: #0077b6;
+}
+
+.property-card {
+  background: rgba(255, 255, 255, 0.95);
+  color: #111;
+  border: 1px solid #ddd;
+}
+
+.property-card h3 {
+  color: #005a8d;
+}
+
+.sold-badge {
+  background: #fdd835;
+  color: #111;
+}
+
+.success-message {
+  background: #4caf50;
+}
+
+input, textarea, select {
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+  border: 1px solid #ccc;
+  font-weight: 500;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #666;
+}
+
+body {
+  background: linear-gradient(to bottom, #dbefff, #b0d9f7, #91c6f0);
+  color: #222;
+}
+
+h1 {
+  color: #003f6b;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
+}
+
+.info-section h2 {
+  color: #004a80;
+}
+
+.property-card h3 {
+  color: #003f6b;
+}
+
+body {
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+  background-size: cover;
+  color: #222;
+}
+
+.info-section, form {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+h1 {
+  color: #004a80;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
+}
+
+.info-section h2 {
+  color: #003f6b;
+}
+
+.property-card {
+  background: rgba(255, 255, 255, 0.95);
+  color: #111;
+}
+
+.fake-price {
+  text-decoration: line-through;
+  color: #c00;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+.price-label {
+  display: inline-block;
+  background: #ffeb3b;
+  color: #222;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.price-label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(45deg, #ffe082, #ffca28);
+  color: #222;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 25px;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 5;
+}
+
+.fake-price {
+  position: relative;
+  display: inline-block;
+  color: rgb(72, 109, 212);
+  font-size: 1rem;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.fake-price::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: rgb(11, 10, 10);
+  animation: crack 0.6s ease-out forwards;
+}
+
+@keyframes crack {
+  0% {
+    width: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    width: 100%;
+    transform: rotate(-5deg);
+  }
+}
+</style>
 </head>
 <body>
 <div class="particles"></div>
@@ -129,6 +278,13 @@
 <textarea id="extra" name="extra" placeholder="הערות נוספות..."></textarea>
 <button class="submit-btn" type="submit">שלח פרטים</button>
 </form>
+<section class="info-section">
+<h2>הצצה לחוויית המגורים</h2>
+<video autoplay="" controls="" loop="" muted="" playsinline="" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); margin-top: 1rem;">
+<source src="polis-tour.mp4" type="video/mp4"/>
+    הדפדפן שלך לא תומך בווידאו.
+  </video>
+</section>
 <section class="info-section">
 <h2>אודות Polis Seaside Living</h2>
 <p>ברוכים הבאים ל-Polis Seaside Living – סוכנות נדל"ן מובילה המתמחה בנכסי נופש יד שנייה בקו ראשון לים באזור לאטצ'י ופוליס.</p>
@@ -154,49 +310,49 @@
 <div class="catalog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
 <!-- Property Card -->
 <div class="catalog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
-<div class="property-card">
+<div class="property-card"><div class="price-label">מבצעי השקה • פריסייל</div>
 <div class="sold-badge">נמכר</div>
 <img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg" style="width:100%; border-radius:10px; margin-bottom:1rem;"/>
 <h3>נכס מספר: 12525</h3>
 <p>חדרים: 2<br/>שטח בנוי: 93 מ"ר<br/>מרפסת מקורה: 12 מ"ר<br/>מרפסת פתוחה: 59 מ"ר<br/>סה"כ שטח: 105 מ"ר</p>
-<strong style="color:orange;">€208,964</strong>
+<span class="fake-price">€229,860</span><strong style="color:orange;">€208,964</strong>
 </div>
-<div class="property-card">
+<div class="property-card"><div class="price-label">מבצעי השקה • פריסייל</div>
 <img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg" style="width:100%; border-radius:10px; margin-bottom:1rem;"/>
 <h3>נכס מספר: 12526</h3>
 <p>חדרים: 2<br/>שטח בנוי: 79 מ"ר<br/>מרפסת מקורה: 9 מ"ר<br/>מרפסת פתוחה: 20 מ"ר<br/>סה"כ שטח: 88 מ"ר</p>
-<strong style="color:orange;">€175,132</strong>
+<span class="fake-price">€192,645</span><strong style="color:orange;">€175,132</strong>
 </div>
-<div class="property-card">
+<div class="property-card"><div class="price-label">מבצעי השקה • פריסייל</div>
 <img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg" style="width:100%; border-radius:10px; margin-bottom:1rem;"/>
 <h3>נכס מספר: 12527</h3>
 <p>חדרים: 1<br/>שטח בנוי: 55 מ"ר<br/>מרפסת מקורה: 9 מ"ר<br/>מרפסת פתוחה: 17 מ"ר<br/>סה"כ שטח: 64 מ"ר</p>
-<strong style="color:orange;">€138,400</strong>
+<span class="fake-price">€152,240</span><strong style="color:orange;">€138,400</strong>
 </div>
-<div class="property-card">
+<div class="property-card"><div class="price-label">מבצעי השקה • פריסייל</div>
 <img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg" style="width:100%; border-radius:10px; margin-bottom:1rem;"/>
 <h3>נכס מספר: 12528</h3>
 <p>חדרים: 2<br/>שטח בנוי: 79 מ"ר<br/>מרפסת מקורה: 9 מ"ר<br/>מרפסת פתוחה: 22 מ"ר<br/>סה"כ שטח: 88 מ"ר</p>
-<strong style="color:orange;">€175,132</strong>
+<span class="fake-price">€192,645</span><strong style="color:orange;">€175,132</strong>
 </div>
-<div class="property-card">
+<div class="property-card"><div class="price-label">מבצעי השקה • פריסייל</div>
 <img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg" style="width:100%; border-radius:10px; margin-bottom:1rem;"/>
 <h3>נכס מספר: 12529</h3>
 <p>חדרים: 1<br/>שטח בנוי: 58 מ"ר<br/>מרפסת מקורה: 10 מ"ר<br/>מרפסת פתוחה: 18 מ"ר<br/>סה"כ שטח: 68 מ"ר</p>
-<strong style="color:orange;">€145,400</strong>
+<span class="fake-price">€159,940</span><strong style="color:orange;">€145,400</strong>
 </div>
-<div class="property-card">
+<div class="property-card"><div class="price-label">מבצעי השקה • פריסייל</div>
 <img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg" style="width:100%; border-radius:10px; margin-bottom:1rem;"/>
 <h3>נכס מספר: 12530</h3>
 <p>חדרים: 2<br/>שטח בנוי: 79 מ"ר<br/>מרפסת מקורה: 9 מ"ר<br/>מרפסת פתוחה: 2 מ"ר<br/>סה"כ שטח: 88 מ"ר</p>
-<strong style="color:orange;">€175,132</strong>
+<span class="fake-price">€192,645</span><strong style="color:orange;">€175,132</strong>
 </div>
-<div class="property-card">
+<div class="property-card"><div class="price-label">מבצעי השקה • פריסייל</div>
 <div class="sold-badge">נמכר</div>
 <img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg" style="width:100%; border-radius:10px; margin-bottom:1rem;"/>
 <h3>נכס מספר: 12531</h3>
 <p>חדרים: 2<br/>שטח בנוי: 97 מ"ר<br/>מרפסת מקורה: 10 מ"ר<br/>מרפסת פתוחה: 53 מ"ר<br/>סה"כ שטח: 107 מ"ר</p>
-<strong style="color:orange;">€212,944</strong>
+<span class="fake-price">€234,238</span><strong style="color:orange;">€212,944</strong>
 </div>
 <section class="info-section">
 <h2>יצירת קשר</h2>
