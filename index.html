@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+
+<html dir="rtl" lang="he">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Polis Seaside Living - השקעות נדל״ן יוקרתיות בקפריסין</title>
-  <meta name="description" content="דירות נופש בקו ראשון לים בפוליס לאטצ'י. השקעה משתלמת עם יתרונות מס, איכות חיים גבוהה ונכסים זמינים מיידית.">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Polis Seaside Living - השקעות נדל״ן יוקרתיות בקפריסין</title>
+<meta content="דירות נופש בקו ראשון לים בפוליס לאטצ'י. השקעה משתלמת עם יתרונות מס, איכות חיים גבוהה ונכסים זמינים מיידית." name="description"/>
+<style>
     body { margin: 0; font-family: 'Segoe UI', Tahoma, sans-serif; background: #0a0a0a; color: #fff; }
     .particles { position: fixed; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
     .particle { position: absolute; width: 4px; height: 4px; background: rgba(255,255,255,0.2); border-radius: 50%; animation: float 6s ease-in-out infinite; }
@@ -66,123 +67,146 @@
     border-radius:15px;
     box-shadow:0 0 10px rgba(255,255,255,0.05);
   }
-  </style>
+  
+    /* Mobile Enhancements */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+        line-height: 1.4;
+        margin-bottom: 1rem;
+      }
+      form {
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+      }
+      input, textarea, select {
+        font-size: 1rem;
+        padding: 0.8rem;
+      }
+      .submit-btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+      }
+      .info-section {
+        padding: 1.5rem;
+      }
+      .info-section h2 {
+        font-size: 1.6rem;
+      }
+      .info-section p {
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+      .property-card {
+        padding: 1rem;
+        font-size: 0.95rem;
+      }
+      .property-card h3 {
+        font-size: 1.1rem;
+      }
+      .property-card p {
+        font-size: 0.95rem;
+      }
+    }
+    </style>
 </head>
 <body>
-  
-  <div class="particles"></div>
-  <div class="success-message" id="successMessage">✅ הפרטים נשלחו בהצלחה!</div>
-
-  <div class="container">
-    <h1>Polis Seaside Living - נכסי נופש יוקרתיים בקפריסין</h1>
-
-    <form id="leadForm">
-      <input type="text" id="name" name="name" placeholder="שם מלא ✨" required>
-      <input type="email" id="email" name="email" placeholder="כתובת מייל 📧" required>
-<input type="text" id="propertyNumber" name="propertyNumber" placeholder="מספר נכס מעניין">
-      <!-- <select id="duration" name="duration" required>
+<div class="particles"></div>
+<div class="success-message" id="successMessage">✅ הפרטים נשלחו בהצלחה!</div>
+<div class="container">
+<h1>Polis Seaside Living - נכסי נופש יוקרתיים בקפריסין</h1>
+<form id="leadForm">
+<input id="name" name="name" placeholder="שם מלא ✨" required="" type="text"/>
+<input id="email" name="email" placeholder="כתובת מייל 📧" required="" type="email"/>
+<input id="propertyNumber" name="propertyNumber" placeholder="מספר נכס מעניין" type="text"/>
+<!-- <select id="duration" name="duration" required>
         <option value="">כמה זמן אתה מחפש נכס בקפריסין?</option>
         <option value="less_3">פחות מ-3 חודשים</option>
         <option value="3_6">3–6 חודשים</option>
         <option value="6_more">יותר מ-6 חודשים</option>
       </select> -->
-      <!-- <input type="text" id="budget" name="budget" placeholder="מה התקציב שלך (€)? 💰" required> -->
-      <textarea id="extra" name="extra" placeholder="הערות נוספות..."></textarea>
-      <button type="submit" class="submit-btn">שלח פרטים</button>
-    </form>
- 
-    <section class="info-section">
-      <h2>אודות Polis Seaside Living</h2>
-      <p>ברוכים הבאים ל-Polis Seaside Living – סוכנות נדל"ן מובילה המתמחה בנכסי נופש יד שנייה בקו ראשון לים באזור לאטצ'י ופוליס.</p>
-      <p>עם ניסיון של למעלה מ-15 שנה בתחום, אנו מציעים ליווי אישי, מקצועי ודיסקרטי למשקיעים, משפחות וזוגות המחפשים איכות חיים ונכס משתלם להשקעה.</p>
-    </section>
-
-    <section class="info-section">
-      <h2>למה קפריסין?</h2>
-      <p>✔️ נכסים קיימים, מוכנים למעבר מידי<br>
-         ✔️ השקעה יציבה ונגישה לישראלים<br>
-         ✔️ יתרונות מס משמעותיים למחזיקי נכסים<br>
-         ✔️ סגנון חיים שקט ובטוח באי אירופאי חמים<br>
-         ✔️ קרבה לישראל – פחות משעה טיסה<br>
+<!-- <input type="text" id="budget" name="budget" placeholder="מה התקציב שלך (€)? 💰" required> -->
+<textarea id="extra" name="extra" placeholder="הערות נוספות..."></textarea>
+<button class="submit-btn" type="submit">שלח פרטים</button>
+</form>
+<section class="info-section">
+<h2>אודות Polis Seaside Living</h2>
+<p>ברוכים הבאים ל-Polis Seaside Living – סוכנות נדל"ן מובילה המתמחה בנכסי נופש יד שנייה בקו ראשון לים באזור לאטצ'י ופוליס.</p>
+<p>עם ניסיון של למעלה מ-15 שנה בתחום, אנו מציעים ליווי אישי, מקצועי ודיסקרטי למשקיעים, משפחות וזוגות המחפשים איכות חיים ונכס משתלם להשקעה.</p>
+</section>
+<section class="info-section">
+<h2>למה קפריסין?</h2>
+<p>✔️ נכסים קיימים, מוכנים למעבר מידי<br/>
+         ✔️ השקעה יציבה ונגישה לישראלים<br/>
+         ✔️ יתרונות מס משמעותיים למחזיקי נכסים<br/>
+         ✔️ סגנון חיים שקט ובטוח באי אירופאי חמים<br/>
+         ✔️ קרבה לישראל – פחות משעה טיסה<br/>
          ✔️ מחירים אטרקטיביים לעומת מרכז הארץ</p>
-    </section>
-
-    <section class="info-section">
-      <h2>פרטי הדירות</h2>
-      <p>• כל הנכסים ממוקמים בקו ראשון לים<br>
-         • כוללים 2–4 חדרי שינה, מטבח וסלון<br>
-         • מיועדים לשיפוץ קל – הזדמנות השבחה למשקיע<br>
-         • מחירים בין €280,000 ל-€1,200,000<br>
+</section>
+<section class="info-section">
+<h2>פרטי הדירות</h2>
+<p>• כל הנכסים ממוקמים בקו ראשון לים<br/>
+         • כוללים 2–4 חדרי שינה, מטבח וסלון<br/>
+         • מיועדים לשיפוץ קל – הזדמנות השבחה למשקיע<br/>
+         • מחירים בין €280,000 ל-€1,200,000<br/>
          • מיקומים: לאטצ'י ביי, פוליס הילס, לימסול, אגיוס ניקולאוס</p>
-    </section>
-
-    <div class="catalog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
-  
-  <!-- Property Card -->
-  <div class="catalog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
-
-  <div class="property-card">
-    <div class="sold-badge">נמכר</div>
-    <img src="final_assets/traditional-cyprus.jpg" alt="Apartment Image" style="width:100%; border-radius:10px; margin-bottom:1rem;">
-    <h3>נכס מספר: 12525</h3>
-    <p>חדרים: 2<br>שטח בנוי: 93 מ"ר<br>מרפסת מקורה: 12 מ"ר<br>מרפסת פתוחה: 59 מ"ר<br>סה"כ שטח: 105 מ"ר</p>
-    <strong style="color:orange;">€208,964</strong>
-  </div>
-
-  <div class="property-card">
-    <img src="final_assets/traditional-cyprus.jpg" alt="Apartment Image" style="width:100%; border-radius:10px; margin-bottom:1rem;">
-    <h3>נכס מספר: 12526</h3>
-    <p>חדרים: 2<br>שטח בנוי: 79 מ"ר<br>מרפסת מקורה: 9 מ"ר<br>מרפסת פתוחה: 20 מ"ר<br>סה"כ שטח: 88 מ"ר</p>
-    <strong style="color:orange;">€175,132</strong>
-  </div>
-
-  <div class="property-card">
-    <img src="final_assets/traditional-cyprus.jpg" alt="Apartment Image" style="width:100%; border-radius:10px; margin-bottom:1rem;">
-    <h3>נכס מספר: 12527</h3>
-    <p>חדרים: 1<br>שטח בנוי: 55 מ"ר<br>מרפסת מקורה: 9 מ"ר<br>מרפסת פתוחה: 17 מ"ר<br>סה"כ שטח: 64 מ"ר</p>
-    <strong style="color:orange;">€138,400</strong>
-  </div>
-
-  <div class="property-card">
-    <img src="final_assets/traditional-cyprus.jpg" alt="Apartment Image" style="width:100%; border-radius:10px; margin-bottom:1rem;">
-    <h3>נכס מספר: 12528</h3>
-    <p>חדרים: 2<br>שטח בנוי: 79 מ"ר<br>מרפסת מקורה: 9 מ"ר<br>מרפסת פתוחה: 22 מ"ר<br>סה"כ שטח: 88 מ"ר</p>
-    <strong style="color:orange;">€175,132</strong>
-  </div>
-
-  <div class="property-card">
-    <img src="final_assets/traditional-cyprus.jpg" alt="Apartment Image" style="width:100%; border-radius:10px; margin-bottom:1rem;">
-    <h3>נכס מספר: 12529</h3>
-    <p>חדרים: 1<br>שטח בנוי: 58 מ"ר<br>מרפסת מקורה: 10 מ"ר<br>מרפסת פתוחה: 18 מ"ר<br>סה"כ שטח: 68 מ"ר</p>
-    <strong style="color:orange;">€145,400</strong>
-  </div>
-
-  <div class="property-card">
-    <img src="final_assets/traditional-cyprus.jpg" alt="Apartment Image" style="width:100%; border-radius:10px; margin-bottom:1rem;">
-    <h3>נכס מספר: 12530</h3>
-    <p>חדרים: 2<br>שטח בנוי: 79 מ"ר<br>מרפסת מקורה: 9 מ"ר<br>מרפסת פתוחה: 2 מ"ר<br>סה"כ שטח: 88 מ"ר</p>
-    <strong style="color:orange;">€175,132</strong>
-  </div>
-
-  <div class="property-card">
-    <div class="sold-badge">נמכר</div>
-    <img src="final_assets/traditional-cyprus.jpg" alt="Apartment Image" style="width:100%; border-radius:10px; margin-bottom:1rem;">
-    <h3>נכס מספר: 12531</h3>
-    <p>חדרים: 2<br>שטח בנוי: 97 מ"ר<br>מרפסת מקורה: 10 מ"ר<br>מרפסת פתוחה: 53 מ"ר<br>סה"כ שטח: 107 מ"ר</p>
-    <strong style="color:orange;">€212,944</strong>
-  </div>
-
-
-    <section class="info-section">
-      <h2>יצירת קשר</h2>
-      <p>📞 טלפון: <a href="tel:+35799876543" style="color:gold;">+357 99 876 543</a><br>
-         ✉️ מייל: <a href="mailto:info@polis-seaside.com" style="color:gold;">info@polis-seaside.com</a><br>
-         📍 מיקום: רחוב החוף 12, פוליס לאטצ'י, קפריסין<br>
+</section>
+<div class="catalog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+<!-- Property Card -->
+<div class="catalog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+<div class="property-card">
+<div class="sold-badge">נמכר</div>
+<img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg" style="width:100%; border-radius:10px; margin-bottom:1rem;"/>
+<h3>נכס מספר: 12525</h3>
+<p>חדרים: 2<br/>שטח בנוי: 93 מ"ר<br/>מרפסת מקורה: 12 מ"ר<br/>מרפסת פתוחה: 59 מ"ר<br/>סה"כ שטח: 105 מ"ר</p>
+<strong style="color:orange;">€208,964</strong>
+</div>
+<div class="property-card">
+<img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg" style="width:100%; border-radius:10px; margin-bottom:1rem;"/>
+<h3>נכס מספר: 12526</h3>
+<p>חדרים: 2<br/>שטח בנוי: 79 מ"ר<br/>מרפסת מקורה: 9 מ"ר<br/>מרפסת פתוחה: 20 מ"ר<br/>סה"כ שטח: 88 מ"ר</p>
+<strong style="color:orange;">€175,132</strong>
+</div>
+<div class="property-card">
+<img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg" style="width:100%; border-radius:10px; margin-bottom:1rem;"/>
+<h3>נכס מספר: 12527</h3>
+<p>חדרים: 1<br/>שטח בנוי: 55 מ"ר<br/>מרפסת מקורה: 9 מ"ר<br/>מרפסת פתוחה: 17 מ"ר<br/>סה"כ שטח: 64 מ"ר</p>
+<strong style="color:orange;">€138,400</strong>
+</div>
+<div class="property-card">
+<img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg" style="width:100%; border-radius:10px; margin-bottom:1rem;"/>
+<h3>נכס מספר: 12528</h3>
+<p>חדרים: 2<br/>שטח בנוי: 79 מ"ר<br/>מרפסת מקורה: 9 מ"ר<br/>מרפסת פתוחה: 22 מ"ר<br/>סה"כ שטח: 88 מ"ר</p>
+<strong style="color:orange;">€175,132</strong>
+</div>
+<div class="property-card">
+<img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg" style="width:100%; border-radius:10px; margin-bottom:1rem;"/>
+<h3>נכס מספר: 12529</h3>
+<p>חדרים: 1<br/>שטח בנוי: 58 מ"ר<br/>מרפסת מקורה: 10 מ"ר<br/>מרפסת פתוחה: 18 מ"ר<br/>סה"כ שטח: 68 מ"ר</p>
+<strong style="color:orange;">€145,400</strong>
+</div>
+<div class="property-card">
+<img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg" style="width:100%; border-radius:10px; margin-bottom:1rem;"/>
+<h3>נכס מספר: 12530</h3>
+<p>חדרים: 2<br/>שטח בנוי: 79 מ"ר<br/>מרפסת מקורה: 9 מ"ר<br/>מרפסת פתוחה: 2 מ"ר<br/>סה"כ שטח: 88 מ"ר</p>
+<strong style="color:orange;">€175,132</strong>
+</div>
+<div class="property-card">
+<div class="sold-badge">נמכר</div>
+<img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg" style="width:100%; border-radius:10px; margin-bottom:1rem;"/>
+<h3>נכס מספר: 12531</h3>
+<p>חדרים: 2<br/>שטח בנוי: 97 מ"ר<br/>מרפסת מקורה: 10 מ"ר<br/>מרפסת פתוחה: 53 מ"ר<br/>סה"כ שטח: 107 מ"ר</p>
+<strong style="color:orange;">€212,944</strong>
+</div>
+<section class="info-section">
+<h2>יצירת קשר</h2>
+<p>📞 טלפון: <a href="tel:+35799876543" style="color:gold;">+357 99 876 543</a><br/>
+         ✉️ מייל: <a href="mailto:info@polis-seaside.com" style="color:gold;">info@polis-seaside.com</a><br/>
+         📍 מיקום: רחוב החוף 12, פוליס לאטצ'י, קפריסין<br/>
          🕒 שעות פעילות: ראשון–שישי 09:00–18:00, שבת 10:00–14:00</p>
-    </section>
-  </div>
-
-  <script>
+</section>
+</div>
+<script>
     function createParticles() {
       fetch("https://script.google.com/macros/s/AKfycb.../exec", { method: "POST", body: new FormData() });
       const container = document.querySelector('.particles');
@@ -234,5 +258,5 @@
 
     document.addEventListener('DOMContentLoaded', createParticles);
   </script>
-</body>
+</div></div></body>
 </html>
