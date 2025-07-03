@@ -172,7 +172,7 @@ h1 {
 }
 
 body {
-  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+  background: url('final_assets/prop-img.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #222;
 }
@@ -272,13 +272,20 @@ input, textarea, select {
   box-sizing: border-box;
 }
 
+
 </style>
 </head>
 <body>
+
+  <h1>Polis Seaside Living - נכסי נופש יוקרתיים בקפריסין</h1>
+
+<div class="hero-image">
+  <img src="final_assets/prop-img.jpg" alt="נוף מהנכס" style="width: 100%; max-height: 400px; object-fit: cover; border-bottom: 5px solid #004a80; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+</div>
+
 <div class="particles"></div>
 <div class="success-message" id="successMessage">✅ הפרטים נשלחו בהצלחה!</div>
 <div class="container">
-<h1>Polis Seaside Living - נכסי נופש יוקרתיים בקפריסין</h1>
 <form id="leadForm">
 <input id="name" name="name" placeholder="שם מלא ✨" required="" type="text"/>
 <input id="email" name="email" placeholder="כתובת מייל 📧" required="" type="email"/>
@@ -293,12 +300,24 @@ input, textarea, select {
 <textarea id="extra" name="extra" placeholder="הערות נוספות..."></textarea>
 <button class="submit-btn" type="submit">שלח פרטים</button>
 </form>
+<section class="info-section"> 
+  <h2>פרטי הדירות</h2>
+  <p>
+    ✔️ כל הנכסים ממוקמים בקו ראשון לים<br>
+    ✔️ כוללים 1–2 חדרי שינה, מטבח וסלון<br>
+    ✔️ מיועדים לשיפוץ קל – הזדמנות השבחה למשקיע<br>
+    ✔️ מחירים בין €138,400 ל-€212,944<br>
+    ✔️ מיקומים: לימסול, אגיוס ניקולאוס, פוליס הילס
+  </p>
+</section>
 <section class="info-section">
 <h2>הצצה לחוויית המגורים</h2>
-<video autoplay="" controls="" loop="" muted="" playsinline="" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); margin-top: 1rem;">
-<source src="polis-tour.mp4" type="video/mp4"/>
-    הדפדפן שלך לא תומך בווידאו.
-  </video>
+<video autoplay muted loop playsinline controls
+  style="width: 60%; max-width: 480px; height: auto; margin: 2rem auto; display: block; border-radius: 15px; box-shadow: 0 6px 18px rgba(0,0,0,0.3);">
+  <source src="polis-tour1.mp4" type="video/mp4" />
+  הדפדפן שלך לא תומך בווידאו.
+</video>
+
 </section>
 <section class="info-section">
 <h2>אודות Polis Seaside Living</h2>
@@ -306,21 +325,16 @@ input, textarea, select {
 <p>עם ניסיון של למעלה מ-15 שנה בתחום, אנו מציעים ליווי אישי, מקצועי ודיסקרטי למשקיעים, משפחות וזוגות המחפשים איכות חיים ונכס משתלם להשקעה.</p>
 </section>
 <section class="info-section">
-<h2>למה קפריסין?</h2>
-<p>✔️ נכסים קיימים, מוכנים למעבר מידי<br/>
-         ✔️ השקעה יציבה ונגישה לישראלים<br/>
-         ✔️ יתרונות מס משמעותיים למחזיקי נכסים<br/>
-         ✔️ סגנון חיים שקט ובטוח באי אירופאי חמים<br/>
-         ✔️ קרבה לישראל – פחות משעה טיסה<br/>
-         ✔️ מחירים אטרקטיביים לעומת מרכז הארץ</p>
-</section>
-<section class="info-section">
-<h2>פרטי הדירות</h2>
-<p>• כל הנכסים ממוקמים בקו ראשון לים<br/>
-         • כוללים 2–4 חדרי שינה, מטבח וסלון<br/>
-         • מיועדים לשיפוץ קל – הזדמנות השבחה למשקיע<br/>
-         • מחירים בין €280,000 ל-€1,200,000<br/>
-         • מיקומים: לאטצ'י ביי, פוליס הילס, לימסול, אגיוס ניקולאוס</p>
+  <h2>למה קפריסין?</h2>
+  <p>
+    ✔️ נכסים קיימים, מוכנים למעבר מידי<br>
+    ✔️ השקעה יציבה ונגישה לישראלים<br>
+    ✔️ מרפסת עילית צופה לים<br>
+    ✔️ יתרונות מס משמעותיים למחזיקי נכסים<br>
+    ✔️ סגנון חיים שקט ובטוח באי אירופאי חמים<br>
+    ✔️ קרבה לישראל – פחות משעה טיסה<br>
+    ✔️ מחירים אטרקטיביים לעומת מרכז הארץ
+  </p>
 </section>
 <div class="catalog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
 <!-- Property Card -->
