@@ -2,18 +2,23 @@
 
 <html dir="rtl" lang="he">
 <head>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Polis Seaside Living - השקעות נדל״ן יוקרתיות בקפריסין</title>
 <meta content="דירות נופש בקו ראשון לים בפוליס לאטצ'י. השקעה משתלמת עם יתרונות מס, איכות חיים גבוהה ונכסים זמינים מיידית." name="description"/>
 <style>
+  form, input, select, textarea, button {
+  font-family: 'Assistant', sans-serif;
+}
+
     body { margin: 0; font-family: 'Segoe UI', Tahoma, sans-serif; background: #0a0a0a; color: #fff; }
     .particles { position: fixed; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
     .particle { position: absolute; width: 4px; height: 4px; background: rgba(255,255,255,0.2); border-radius: 50%; animation: float 6s ease-in-out infinite; }
     @keyframes float { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-20px); } }
     .container { max-width: 1200px; margin: auto; padding: 2rem; position: relative; z-index: 1; }
     h1 { font-size: 2.5rem; text-align: center; color: gold; }
-    form { max-width: 700px; margin: 2rem auto; background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 15px; }
+    form { max-width: 700px; margin: 2rem auto; background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 15px;}
     input, textarea, select {
       width: 100%; padding: 1rem; margin: 0.5rem 0;
       border-radius: 10px; border: none; font-size: 1rem;
@@ -277,6 +282,7 @@ input, textarea, select {
 </head>
 <body>
 
+
 <h1 style="
   font-size: 2.8rem;
   text-align: center;
@@ -284,8 +290,15 @@ input, textarea, select {
   text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
   margin-top: 2rem;
   line-height: 1.6;
-">
-  Polis Seaside Living – נכסי נופש עם
+">  POLIS SEASIDE LIVING</h1>
+<h1 style="
+  font-size: 2.8rem;
+  text-align: center;
+  color: #003f6b;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
+  margin-top: 2rem;
+  line-height: 1.6;
+">נכסים
   <span style="color: #FFD700; font-weight: bold;">קו ראשון לים</span>
   בקפריסין
 </h1>
@@ -301,6 +314,7 @@ input, textarea, select {
 <form id="leadForm">
 <input id="name" name="name" placeholder="שם מלא ✨" required="" type="text"/>
 <input id="email" name="email" placeholder="כתובת מייל 📧" required="" type="email"/>
+<input id="phone" name="phone" type="tel" placeholder="מספר טלפון 📞" required>
 <input id="propertyNumber" name="propertyNumber" placeholder="מספר נכס מעניין" type="text"/>
 <!-- <select id="duration" name="duration" required>
         <option value="">כמה זמן אתה מחפש נכס בקפריסין?</option>
@@ -309,6 +323,15 @@ input, textarea, select {
         <option value="6_more">יותר מ-6 חודשים</option>
       </select> -->
 <!-- <input type="text" id="budget" name="budget" placeholder="מה התקציב שלך (€)? 💰" required> -->
+ <select id="referral" name="referral" required>
+  <option value="">איך שמעת עלינו?</option>
+  <option value="facebook">פייסבוק</option>
+  <option value="instagram">אינסטגרם</option>
+  <option value="google">חיפוש בגוגל</option>
+  <option value="friend">המלצה מחבר</option>
+  <option value="other">אחר</option>
+</select>
+
 <textarea id="extra" name="extra" placeholder="הערות נוספות..."></textarea>
 <button class="submit-btn" type="submit">שלח פרטים</button>
 </form>
@@ -330,11 +353,6 @@ input, textarea, select {
   הדפדפן שלך לא תומך בווידאו.
 </video>
 
-</section>
-<section class="info-section">
-<h2>אודות Polis Seaside Living</h2>
-<p>ברוכים הבאים ל-Polis Seaside Living – סוכנות נדל"ן מובילה המתמחה בנכסי נופש יד שנייה בקו ראשון לים באזור לאטצ'י ופוליס.</p>
-<p>עם ניסיון של למעלה מ-15 שנה בתחום, אנו מציעים ליווי אישי, מקצועי ודיסקרטי למשקיעים, משפחות וזוגות המחפשים איכות חיים ונכס משתלם להשקעה.</p>
 </section>
 <section class="info-section">
   <h2>למה קפריסין?</h2>
@@ -392,14 +410,6 @@ input, textarea, select {
 <h3>נכס מספר: 12531</h3>
 <p>חדרים: 2<br/>שטח בנוי: 97 מ"ר<br/>מרפסת מקורה: 10 מ"ר<br/>מרפסת פתוחה: 53 מ"ר<br/>סה"כ שטח: 107 מ"ר</p>
 <span class="fake-price">€234,238</span><strong style="color:orange;">€212,944</strong>
-</div>
-<section class="info-section">
-<h2>יצירת קשר</h2>
-         ✉️ מייל: <a href="mailto:info@polis-seaside.com" style="color:orange;">info@polis-seaside.com</a><br/>
-         📍 מיקום: רחוב החוף 12, פוליס לאטצ'י, קפריסין<br/>
-         🕒 שעות פעילות: ראשון–שישי 09:00–18:00, שבת 10:00–14:00</p>
-</section>
-</div>
 <script>
     function createParticles() {
       fetch("https://script.google.com/macros/s/AKfycb.../exec", { method: "POST", body: new FormData() });
@@ -421,7 +431,11 @@ input, textarea, select {
     formData.append('שם', document.getElementById('name').value);
     formData.append('אימייל', document.getElementById('email').value);
     formData.append('מספר נכס', document.getElementById('propertyNumber').value);
+    formData.append('איך שמעת עלינו', document.getElementById('referral').value);
     formData.append('הערות', document.getElementById('extra').value);
+    formData.append('טלפון', document.getElementById('phone').value);
+
+
 
     const btn = this.querySelector('button');
     const originalText = btn.textContent;
@@ -429,7 +443,7 @@ input, textarea, select {
     btn.textContent = "נשלח...";
 
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbwZ-9meEmBeNrYlA0wFHH2SOuCsB6EQq6y6RLmr14n5Gd93IQDBKXuIqWWzxx9JLab15g/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbx8TYkISK-qaF-eLbgutfedu-5vl_5jd1yTvH1lFJxHVgf-otLfySwhjVYn2u7WPGCS4Q/exec', {
         method: 'POST',
         body: formData
       });
