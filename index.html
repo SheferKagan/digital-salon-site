@@ -276,6 +276,84 @@ input, textarea, select {
   text-align: right;
   box-sizing: border-box;
 }
+/* Floating Button */
+#latchiBtn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  background: linear-gradient(135deg, #6EC1E4, #4A90E2);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease-in-out;
+}
+#latchiBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, #4A90E2, #6EC1E4);
+}
+@media (max-width: 768px) {
+  #latchiBtn {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+  }
+}
+
+/* למה לאטצ׳י section styling */
+#whyLatchi {
+  background: linear-gradient(135deg, #e3f6ff, #f6fcff);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-top: 3rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  position: relative;
+}
+#whyLatchi h2 {
+  color: #4A90E2;
+  font-size: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.floating-latchi-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  background: linear-gradient(135deg, #ffdf70, #f5c518);
+  color: #222;
+  font-family: 'Assistant', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.9rem 1.6rem;
+  border: none;
+  border-radius: 40px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.floating-latchi-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #ffe98a, #f9d857);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .floating-latchi-btn {
+    top: 15px;
+    right: 15px;
+    font-size: 1rem;
+    padding: 0.75rem 1.3rem;
+  }
+}
 
 
 </style>
@@ -345,6 +423,38 @@ input, textarea, select {
     ✔️ מיקומים: פוליס הילס
   </p>
 </section>
+
+<!-- Floating button -->
+<button id="latchiBtn" onclick="document.getElementById('whyLatchi').scrollIntoView({behavior: 'smooth'})">
+  למה לאטצ׳י?
+</button>
+
+<!-- [existing body content remains unchanged] -->
+
+<section id="whyLatchi" class="info-section" style="
+  background: linear-gradient(to right, #ffffff, #ddd);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-top: 3rem;
+">
+  <h2 style="color: #004a80; font-size: 2rem; text-align: center;">למה לאטצ׳י</h2>
+  <div style="line-height: 2; font-size: 1.1rem; text-align: right; direction: rtl;">
+  <p><span style="font-weight: bold;">🚗 גישה מהירה ונוחה:</span><br>
+  כביש מהיר חדש שיחבר את שדה התעופה בפאפוס ישירות לפוליס – יקצר את הדרך לכ־30 דקות בלבד.</p>
+
+  <p><span style="font-weight: bold;">🏨 תנופת פיתוח יוקרתית:</span><br>
+  מלון חדש של רשת פאתל עם מעל 700 חדרים מוקם באזור, ולצידו מתוכנן מלון נוסף ממש על קו המרינה.</p>
+
+  <p><span style="font-weight: bold;">⚓ הרחבת המרינה:</span><br>
+  המרינה של לאטצ'י צפויה להתרחב ולהציע חוויית נמל ברמה בינלאומית – מושכת שייטים, תיירות ונכסים יוקרתיים.</p>
+
+  <p><span style="font-weight: bold;">📈 פוטנציאל השקעה מוכח:</span><br>
+  בתי מלון באזור כמו <em>Santa Barbara Seafront Resort & Spa</em> מציעים לינה בכ־180 € ללילה – אינדיקציה ברורה לרמת ביקוש גבוהה ונכסים בעלי ערך יציב.</p>
+</div>
+
+</section>
+
 <section class="info-section">
 <h2>נכסים להשקעה</h2>
 <video autoplay muted loop playsinline controls
