@@ -1,605 +1,458 @@
 <!DOCTYPE html>
-
 <html dir="rtl" lang="he">
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Polis Seaside Living - השקעות נדל״ן יוקרתיות בקפריסין</title>
-<meta content="דירות נופש בקו ראשון לים בפוליס לאטצ'י. השקעה משתלמת עם יתרונות מס, איכות חיים גבוהה ונכסים זמינים מיידית." name="description"/>
-<style>
-  form, input, select, textarea, button {
-  font-family: 'Assistant', sans-serif;
-}
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Polis Seaside Living - השקעות נדל״ן יוקרתיות בקפריסין</title>
+    <meta content="דירות נופש בקו ראשון לים בפוליס לאטצ'י. השקעה משתלמת עם יתרונות מס, איכות חיים גבוהה ונכסים זמינים מיידית." name="description"/>
+    <style>
+        :root {
+            --primary-blue: #004A80;
+            --secondary-gold: #FFD700;
+            --light-blue-bg: #E3F6FF;
+            --dark-text: #222;
+            --light-text: #fff;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --form-bg: rgba(255, 255, 255, 0.85);
+            --btn-bg: linear-gradient(135deg, #FFD700, #D4AF37);
+            --btn-hover-bg: linear-gradient(135deg, #FFE066, #C5A100);
+            --btn-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+        }
 
-    body { margin: 0; font-family: 'Segoe UI', Tahoma, sans-serif; background: #0a0a0a; color: #fff; }
-    .particles { position: fixed; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
-    .particle { position: absolute; width: 4px; height: 4px; background: rgba(255,255,255,0.2); border-radius: 50%; animation: float 6s ease-in-out infinite; }
-    @keyframes float { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-20px); } }
-    .container { max-width: 1200px; margin: auto; padding: 2rem; position: relative; z-index: 1; }
-    h1 { font-size: 2.5rem; text-align: center; color: gold; }
-    form { max-width: 700px; margin: 2rem auto; background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 15px;}
-    input, textarea, select {
-      width: 100%; padding: 1rem; margin: 0.5rem 0;
-      border-radius: 10px; border: none; font-size: 1rem;
-      background: rgba(255, 255, 255, 0.1); color: #fff;
-    }
-    .submit-btn {
-      display: block; margin: 2rem auto 0 auto; padding: 1.2rem 3rem;
-      font-size: 1.25rem; background: linear-gradient(135deg, #FFD700, #D4AF37);
-      color: #000; font-weight: bold; border: none; border-radius: 12px;
-      cursor: pointer; transition: all 0.3s ease;
-      box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
-    }
-    .submit-btn:hover {
-      background: linear-gradient(135deg, #FFE066, #C5A100);
-      transform: scale(1.05);
-      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.6);
-    }
-    .success-message {
-      transition: opacity 0.4s ease;
-      display: none; position: fixed; top: 20px; left: 50%;
-      transform: translateX(-50%); background: #10b981; color: white;
-      padding: 1rem 2rem; border-radius: 10px; font-size: 1.2rem;
-      box-shadow: 0 10px 20px rgba(16,185,129,0.3); z-index: 9999;
-    }
-    .info-section {
-      background: linear-gradient(to right, #1C1C1C, #0A0A0A);
-      border-radius: 20px; padding: 2rem; margin-top: 3rem;
-    }
-    .info-section h2 { text-align: center; color: gold; font-size: 2rem; }
-    .info-section p { line-height: 2; font-size: 1.1rem; }
-    .sold-badge {
-      position: absolute;
-      top: 230px;            /* move lower into the card */
-      left: 0px;           /* move toward the center of the card */
-      background: #FFD700;
-      color: black;
-      transform: rotate(-45deg);
-      width: 400px;
-      text-align: center;
-      font-weight: bold;
-      font-size: 1.2rem;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-      z-index: 10;
-      padding: 10px 0;
-    }
+        body {
+            font-family: 'Assistant', sans-serif;
+            background: var(--light-blue-bg);
+            color: var(--dark-text);
+            margin: 0;
+            line-height: 1.6;
+        }
 
-  .property-card {
-    position: relative;
-    background:#111;
-    padding:1rem;
-    border-radius:15px;
-    box-shadow:0 0 10px rgba(255,255,255,0.05);
-  }
-  
-    /* Mobile Enhancements */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-        line-height: 1.4;
-        margin-bottom: 1rem;
-      }
-      form {
-        padding: 1.5rem;
-        margin: 1.5rem auto;
-      }
-      input, textarea, select {
-        font-size: 1rem;
-        padding: 0.8rem;
-      }
-      .submit-btn {
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-      }
-      .info-section {
-        padding: 1.5rem;
-      }
-      .info-section h2 {
-        font-size: 1.6rem;
-      }
-      .info-section p {
-        font-size: 1rem;
-        line-height: 1.7;
-      }
-      .property-card {
-        padding: 1rem;
-        font-size: 0.95rem;
-      }
-      .property-card h3 {
-        font-size: 1.1rem;
-      }
-      .property-card p {
-        font-size: 0.95rem;
-      }
-    }
-    
-body {
-  background: linear-gradient(to bottom, #f2f9ff, #e1f0ff, #cce7ff);
-  color: #222;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            position: relative;
+            z-index: 1;
+        }
 
-.info-section {
-  background: rgba(255, 255, 255, 0.85);
-  color: #333;
-}
+        h1, h2, h3 {
+            font-weight: 700;
+            text-align: center;
+            color: var(--primary-blue);
+            line-height: 1.4;
+            margin-bottom: 1rem;
+        }
 
-.info-section h2 {
-  color: #0077b6;
-}
+        h1 {
+            font-size: 2.8rem;
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
+            margin-top: 2rem;
+        }
 
-.property-card {
-  background: rgba(255, 255, 255, 0.95);
-  color: #111;
-  border: 1px solid #ddd;
-}
+        .gold-text {
+            color: var(--secondary-gold);
+            font-weight: 700;
+        }
 
-.property-card h3 {
-  color: #005a8d;
-}
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-bottom: 5px solid var(--primary-blue);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
 
-.sold-badge {
-  background: #fdd835;
-  color: #111;
-}
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.success-message {
-  background: #4caf50;
-}
+        form {
+            max-width: 700px;
+            margin: 2rem auto;
+            background: var(--form-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            direction: rtl;
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
 
-input, textarea, select {
-  background: rgba(255, 255, 255, 0.9);
-  color: #000;
-  border: 1px solid #ccc;
-  font-weight: 500;
-}
+        input, textarea, select {
+            width: 100%;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--dark-text);
+            font-weight: 500;
+            direction: rtl;
+            text-align: right;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
 
-input::placeholder, textarea::placeholder {
-  color: #666;
-}
+        input::placeholder, textarea::placeholder {
+            color: #666;
+        }
 
-body {
-  background: linear-gradient(to bottom, #dbefff, #b0d9f7, #91c6f0);
-  color: #222;
-}
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
 
-h1 {
-  color: #003f6b;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
-}
+        .submit-btn {
+            display: block;
+            margin: 2rem auto 0 auto;
+            padding: 1.2rem 3rem;
+            font-size: 1.25rem;
+            background: var(--btn-bg);
+            color: #000;
+            font-weight: bold;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--btn-shadow);
+        }
 
-.info-section h2 {
-  color: #004a80;
-}
+        .submit-btn:hover {
+            background: var(--btn-hover-bg);
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.6);
+        }
 
-.property-card h3 {
-  color: #003f6b;
-}
+        .success-message {
+            transition: opacity 0.4s ease;
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #4caf50;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+            z-index: 9999;
+        }
 
-body {
-  background: url('final_assets/prop-img.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: #222;
-}
+        .info-section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-top: 3rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
 
-.info-section, form {
-  background-color: rgba(255, 255, 255, 0.85);
-}
+        .info-section h2 {
+            font-size: 2rem;
+            color: var(--primary-blue);
+        }
 
-h1 {
-  color: #004a80;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
-}
+        .info-section p, .info-section ul {
+            line-height: 2;
+            font-size: 1.1rem;
+            text-align: right;
+            direction: rtl;
+        }
 
-.info-section h2 {
-  color: #003f6b;
-}
+        .property-card {
+            position: relative;
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #ddd;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .property-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
 
-.property-card {
-  background: rgba(255, 255, 255, 0.95);
-  color: #111;
-}
+        .property-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
 
-.fake-price {
-  text-decoration: line-through;
-  color: #c00;
-  font-weight: 500;
-  margin-left: 0.5rem;
-}
+        .property-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            text-align: right;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
 
-.price-label {
-  display: inline-block;
-  background: #ffeb3b;
-  color: #222;
-  font-weight: bold;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  margin-bottom: 0.5rem;
-}
+        .property-card p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin: 0;
+        }
 
-.price-label {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: linear-gradient(45deg, #ffe082, #ffca28);
-  color: #222;
-  font-weight: bold;
-  padding: 6px 10px;
-  border-radius: 25px;
-  font-size: 0.8rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  z-index: 5;
-}
+        .property-card strong {
+            color: orange;
+            font-size: 1.3rem;
+            display: block;
+            margin-top: 1rem;
+            text-align: right;
+        }
 
-.fake-price {
-  position: relative;
-  display: inline-block;
-  color: rgb(72, 109, 212);
-  font-size: 1rem;
-  font-weight: bold;
-  margin-left: 1rem;
-}
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
 
-.fake-price::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  height: 2px;
-  width: 100%;
-  background: rgb(11, 10, 10);
-  animation: crack 0.6s ease-out forwards;
-}
+        .sold-badge {
+            position: absolute;
+            top: 20px;
+            left: -50px;
+            background: var(--secondary-gold);
+            color: black;
+            transform: rotate(-45deg);
+            width: 200px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            padding: 8px 0;
+        }
 
-@keyframes crack {
-  0% {
-    width: 0;
-    transform: rotate(0deg);
-  }
-  100% {
-    width: 100%;
-    transform: rotate(-5deg);
-  }
-}
+        .floating-latchi-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 999;
+            background: linear-gradient(135deg, #ffdf70, #f5c518);
+            color: var(--dark-text);
+            font-family: 'Assistant', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 0.9rem 1.6rem;
+            border: none;
+            border-radius: 40px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-form {
-  direction: rtl;
-  text-align: right;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end; /* ensures button and text align visually right */
-}
+        .floating-latchi-btn:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #ffe98a, #f9d857);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
 
-input, textarea, select {
-  direction: rtl;
-  text-align: right;
-  box-sizing: border-box;
-}
-/* Floating Button */
-#latchiBtn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 999;
-  background: linear-gradient(135deg, #6EC1E4, #4A90E2);
-  color: white;
-  padding: 12px 20px;
-  border-radius: 30px;
-  font-weight: bold;
-  font-size: 0.95rem;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  transition: all 0.3s ease-in-out;
-}
-#latchiBtn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-  background: linear-gradient(135deg, #4A90E2, #6EC1E4);
-}
-@media (max-width: 768px) {
-  #latchiBtn {
-    left: 50%;
-    transform: translateX(-50%);
-    top: 10px;
-  }
-}
-
-/* למה לאטצ׳י section styling */
-#whyLatchi {
-  background: linear-gradient(135deg, #e3f6ff, #f6fcff);
-  border-radius: 20px;
-  padding: 2rem;
-  margin-top: 3rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  position: relative;
-}
-#whyLatchi h2 {
-  color: #4A90E2;
-  font-size: 2rem;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-.floating-latchi-btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 999;
-  background: linear-gradient(135deg, #ffdf70, #f5c518);
-  color: #222;
-  font-family: 'Assistant', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  padding: 0.9rem 1.6rem;
-  border: none;
-  border-radius: 40px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.floating-latchi-btn:hover {
-  transform: scale(1.05);
-  background: linear-gradient(135deg, #ffe98a, #f9d857);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 768px) {
-  .floating-latchi-btn {
-    top: 15px;
-    right: 15px;
-    font-size: 1rem;
-    padding: 0.75rem 1.3rem;
-  }
-}
-
-
-</style>
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            form {
+                padding: 1.5rem;
+            }
+            .info-section {
+                padding: 1.5rem;
+            }
+            .info-section h2 {
+                font-size: 1.8rem;
+            }
+            .info-section p {
+                font-size: 1rem;
+            }
+            .property-card {
+                padding: 1rem;
+            }
+            .floating-latchi-btn {
+                top: 15px;
+                right: 15px;
+                font-size: 1rem;
+                padding: 0.75rem 1.3rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<h1 style="
-  font-size: 2.8rem;
-  text-align: center;
-  color: #003f6b;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
-  margin-top: 2rem;
-  line-height: 1.6;
-">  POLIS SEASIDE LIVING</h1>
-<h1 style="
-  font-size: 2.8rem;
-  text-align: center;
-  color: #003f6b;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
-  margin-top: 2rem;
-  line-height: 1.6;
-">נכסים
-  <span style="color: #FFD700; font-weight: bold;">קו ראשון לים</span>
-  בקפריסין
-</h1>
-<div class="hero-image">
-<img alt="נוף מהנכס" src="final_assets/prop-img.jpg" style="width: 100%; max-height: 400px; object-fit: cover; border-bottom: 5px solid #004a80; box-shadow: 0 4px 20px rgba(0,0,0,0.3);"/>
-</div>
-<div class="particles"></div>
-<div class="success-message" id="successMessage">✅ הפרטים נשלחו בהצלחה!</div>
-<div class="container">
-<form id="leadForm">
-<input id="name" name="name" placeholder="שם מלא ✨" required="" type="text"/>
-<input id="email" name="email" placeholder="כתובת מייל 📧" required="" type="email"/>
-<input id="phone" name="phone" placeholder="מספר טלפון 📞" required="" type="tel"/>
-<input id="propertyNumber" name="propertyNumber" placeholder="מספר נכס מעניין" type="text">
-<!-- <select id="duration" name="duration" required>
-        <option value="">כמה זמן אתה מחפש נכס בקפריסין?</option>
-        <option value="less_3">פחות מ-3 חודשים</option>
-        <option value="3_6">3–6 חודשים</option>
-        <option value="6_more">יותר מ-6 חודשים</option>
-      </select> -->
-<!-- <input type="text" id="budget" name="budget" placeholder="מה התקציב שלך (€)? 💰" required> -->
-<select id="referral" name="referral" required="">
-<option value="">איך שמעת עלינו?</option>
-<option value="facebook">פייסבוק</option>
-<option value="instagram">אינסטגרם</option>
-<option value="google">חיפוש בגוגל</option>
-<option value="friend">המלצה מחבר</option>
-<option value="other">אחר</option>
-</select>
-<textarea id="extra" name="extra" placeholder="הערות נוספות..."></textarea>
-<button class="submit-btn" type="submit">שלח פרטים</button>
-</input></form>
-<section class="info-section">
-<h2>פרטי הדירות</h2>
-<p>
-    ✔️ כל הנכסים ממוקמים בקו ראשון לים<br/>
-    ✔️ כוללים 1–2 חדרי שינה, מטבח וסלון<br/>
-    ✔️ מיועדים לשיפוץ קל – הזדמנות השבחה למשקיע<br/>
-    ✔️ מחירים בין €138,400 ל-€212,944<br/>
-    ✔️ מיקומים: פוליס הילס
-  </p>
-</section>
-<!-- Floating button -->
-<button id="latchiBtn" onclick="document.getElementById('whyLatchi').scrollIntoView({behavior: 'smooth'})">
-  למה לאטצ׳י?
+<button class="floating-latchi-btn" onclick="document.getElementById('whyLatchi').scrollIntoView({behavior: 'smooth'})">
+    למה לאטצ׳י?
 </button>
-<!-- [existing body content remains unchanged] -->
-<section class="info-section" id="whyLatchi" style="
-  background: linear-gradient(to right, #ffffff, #ddd);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-  border-radius: 20px;
-  padding: 2rem;
-  margin-top: 3rem;
-">
-<h2 style="color: #004a80; font-size: 2rem; text-align: center;">למה לאטצ׳י</h2>
-<div style="line-height: 2; font-size: 1.1rem; text-align: right; direction: rtl;">
-<p><span style="font-weight: bold;">🚗 גישה מהירה ונוחה:</span><br/>
-  כביש מהיר חדש שיחבר את שדה התעופה בפאפוס ישירות לפוליס – יקצר את הדרך לכ־30 דקות בלבד.</p>
-<p><span style="font-weight: bold;">🏨 תנופת פיתוח יוקרתית:</span><br/>
-  מלון חדש של רשת פאתל עם מעל 700 חדרים מוקם באזור, ולצידו מתוכנן מלון נוסף ממש על קו המרינה.</p>
-<p><span style="font-weight: bold;">⚓ הרחבת המרינה:</span><br/>
-  המרינה של לאטצ'י צפויה להתרחב ולהציע חוויית נמל ברמה בינלאומית – מושכת שייטים, תיירות ונכסים יוקרתיים.</p>
-<p><span style="font-weight: bold;">📈 פוטנציאל השקעה מוכח:</span><br/>
-  בתי מלון באזור כמו <em>Santa Barbara Seafront Resort &amp; Spa</em> מציעים לינה בכ־180 € ללילה – אינדיקציה ברורה לרמת ביקוש גבוהה ונכסים בעלי ערך יציב.</p>
+<div class="container">
+    <div class="hero-section">
+        <h1 style="text-align: center; color: #003f6b; margin-top: 2rem;">
+            POLIS SEASIDE LIVING
+        </h1>
+        <h1 style="text-align: center; color: #003f6b; margin-top: 1rem;">
+            נכסים <span class="gold-text">קו ראשון לים</span> בקפריסין
+        </h1>
+        <div class="hero-image">
+            <img alt="נוף מהנכס" src="final_assets/prop-img.jpg"/>
+        </div>
+    </div>
+    <div class="success-message" id="successMessage">✅ הפרטים נשלחו בהצלחה!</div>
+    <form id="leadForm">
+        <input id="name" name="name" placeholder="שם מלא ✨" required="" type="text"/>
+        <input id="email" name="email" placeholder="כתובת מייל 📧" required="" type="email"/>
+        <input id="phone" name="phone" placeholder="מספר טלפון 📞" required="" type="tel"/>
+        <input id="propertyNumber" name="propertyNumber" placeholder="מספר נכס מעניין" type="text"/>
+        <select id="referral" name="referral" required="">
+            <option value="">איך שמעת עלינו?</option>
+            <option value="facebook">פייסבוק</option>
+            <option value="instagram">אינסטגרם</option>
+            <option value="google">חיפוש בגוגל</option>
+            <option value="friend">המלצה מחבר</option>
+            <option value="other">אחר</option>
+        </select>
+        <textarea id="extra" name="extra" placeholder="הערות נוספות..."></textarea>
+        <button class="submit-btn" type="submit">שלח פרטים</button>
+    </form>
+    <section class="info-section">
+        <h2>פרטי הדירות</h2>
+        <p>
+            ✔️ כל הנכסים ממוקמים בקו ראשון לים<br/>
+            ✔️ כוללים 1–2 חדרי שינה, מטבח וסלון<br/>
+            ✔️ מיועדים לשיפוץ קל – הזדמנות השבחה למשקיע<br/>
+            ✔️ מחירים בין €138,400 ל-€212,944<br/>
+            ✔️ מיקומים: פוליס הילס
+        </p>
+    </section>
+    <section class="info-section" id="whyLatchi">
+        <h2 style="color: var(--primary-blue);">למה לאטצ׳י</h2>
+        <div>
+            <p><span style="font-weight: bold;">🚗 גישה מהירה ונוחה:</span><br/>
+                כביש מהיר חדש שיחבר את שדה התעופה בפאפוס ישירות לפוליס – יקצר את הדרך לכ־30 דקות בלבד.</p>
+            <p><span style="font-weight: bold;">🏨 תנופת פיתוח יוקרתית:</span><br/>
+                מלון חדש של רשת פאתל עם מעל 700 חדרים מוקם באזור, ולצידו מתוכנן מלון נוסף ממש על קו המרינה.</p>
+            <p><span style="font-weight: bold;">⚓ הרחבת המרינה:</span><br/>
+                המרינה של לאטצ'י צפויה להתרחב ולהציע חוויית נמל ברמה בינלאומית – מושכת שייטים, תיירות ונכסים יוקרתיים.</p>
+            <p><span style="font-weight: bold;">📈 פוטנציאל השקעה מוכח:</span><br/>
+                בתי מלון באזור כמו <em>Santa Barbara Seafront Resort &amp; Spa</em> מציעים לינה בכ־180 € ללילה – אינדיקציה ברורה לרמת ביקוש גבוהה ונכסים בעלי ערך יציב.</p>
+        </div>
+    </section>
+    <section class="info-section">
+        <h2>נכסים להשקעה</h2>
+        <video autoplay="" controls="" loop="" muted="" playsinline="" style="width: 100%; max-width: 600px; height: auto; margin: 2rem auto; display: block; border-radius: 15px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);">
+            <source src="polis-tour1.mp4" type="video/mp4"/>
+            הדפדפן שלך לא תומך בווידאו.
+        </video>
+    </section>
+    <section class="info-section">
+        <h2>למה קפריסין?</h2>
+        <p>
+            ✔️ השקעה יציבה ונגישה לישראלים<br/>
+            ✔️ יתרונות מס משמעותיים למחזיקי נכסים<br/>
+            ✔️ סגנון חיים שקט ובטוח באי אירופאי חמים<br/>
+            ✔️ קרבה לישראל – פחות משעה טיסה<br/>
+            ✔️ מחירים אטרקטיביים לעומת מרכז הארץ
+        </p>
+    </section>
+    <div class="catalog-grid">
+        <div class="property-card">
+            <div class="sold-badge">נמכר</div>
+            <img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg"/>
+            <h3>נכס מספר: 12525</h3>
+            <p>
+                חדרים: 2<br>שטח בנוי: 93 מ"ר<br>מרפסת מקורה: 12 מ"ר<br>מרפסת פתוחה: 59 מ"ר<br>סה"כ שטח: 105 מ"ר
+            </p>
+            <strong style="color:orange;">€229,860</strong>
+        </div>
+        <div class="property-card">
+            <img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg"/>
+            <h3>נכס מספר: 12526</h3>
+            <p>
+                חדרים: 2<br>שטח בנוי: 79 מ"ר<br>מרפסת מקורה: 9 מ"ר<br>מרפסת פתוחה: 20 מ"ר<br>סה"כ שטח: 88 מ"ר
+            </p>
+            <strong style="color:orange;">€192,645</strong>
+        </div>
+        <div class="property-card">
+            <img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg"/>
+            <h3>נכס מספר: 12527</h3>
+            <p>
+                חדרים: 1<br>שטח בנוי: 55 מ"ר<br>מרפסת מקורה: 9 מ"ר<br>מרפסת פתוחה: 17 מ"ר<br>סה"כ שטח: 64 מ"ר
+            </p>
+            <strong style="color:orange;">€152,240</strong>
+        </div>
+        <div class="property-card">
+            <img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg"/>
+            <h3>נכס מספר: 12528</h3>
+            <p>
+                חדרים: 2<br/>שטח בנוי: 79 מ"ר<br/>מרפסת מקורה: 9 מ"ר<br/>מרפסת פתוחה: 22 מ"ר<br/>סה"כ שטח: 88 מ"ר
+            </p>
+            <strong style="color:orange;">€192,645</strong>
+        </div>
+        <div class="property-card">
+            <img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg"/>
+            <h3>נכס מספר: 12529</h3>
+            <p>
+                חדרים: 1<br/>שטח בנוי: 58 מ"ר<br/>מרפסת מקורה: 10 מ"ר<br/>מרפסת פתוחה: 18 מ"ר<br/>סה"כ שטח: 68 מ"ר
+            </p>
+            <strong style="color:orange;">€159,940</strong>
+        </div>
+        <div class="property-card">
+            <img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg"/>
+            <h3>נכס מספר: 12530</h3>
+            <p>
+                חדרים: 2<br/>שטח בנוי: 79 מ"ר<br/>מרפסת מקורה: 9 מ"ר<br/>מרפסת פתוחה: 2 מ"ר<br/>סה"כ שטח: 88 מ"ר
+            </p>
+            <strong style="color:orange;">€192,645</strong>
+        </div>
+        <div class="property-card">
+            <div class="sold-badge">נמכר</div>
+            <img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg"/>
+            <h3>נכס מספר: 12531</h3>
+            <p>
+                חדרים: 2<br/>שטח בנוי: 97 מ"ר<br/>מרפסת מקורה: 10 מ"ר<br/>מרפסת פתוחה: 53 מ"ר<br/>סה"כ שטח: 107 מ"ר
+            </p>
+            <strong style="color:orange;">€234,238</strong>
+        </div>
+    </div>
 </div>
-</section>
-<section class="info-section">
-<h2>נכסים להשקעה</h2>
-<video autoplay="" controls="" loop="" muted="" playsinline="" style="width: 80%; max-width: 600px; height: auto; margin: 2rem auto; display: block; border-radius: 15px; box-shadow: 0 6px 18px rgba(0,0,0,0.3);">
-<source src="polis-tour1.mp4" type="video/mp4"/>
-  הדפדפן שלך לא תומך בווידאו.
-</video>
-</section>
-<section class="info-section">
-<h2>למה קפריסין?</h2>
-<p>
-    ✔️ השקעה יציבה ונגישה לישראלים<br/>
-    ✔️ יתרונות מס משמעותיים למחזיקי נכסים<br/>
-    ✔️ סגנון חיים שקט ובטוח באי אירופאי חמים<br/>
-    ✔️ קרבה לישראל – פחות משעה טיסה<br/>
-    ✔️ מחירים אטרקטיביים לעומת מרכז הארץ
-  </p>
-</section>
-<div class="catalog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
-<!-- Property Card -->
-<div class="catalog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
-<div class="property-card">
-<div class="sold-badge">נמכר</div>
-<img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg" style="width:100%; border-radius:10px; margin-bottom:1rem;">
-<h3>נכס מספר: 12525</h3>
-<p>חדרים: 2<br>שטח בנוי: 93 מ"ר<br>מרפסת מקורה: 12 מ"ר<br>מרפסת פתוחה: 59 מ"ר<br>סה"כ שטח: 105 מ"ר</br></br></br></br></p>
-<strong style="color:orange;">€229,860</strong>
-</img></div>
-<div class="property-card">
-<img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg" style="width:100%; border-radius:10px; margin-bottom:1rem;"/>
-<h3>נכס מספר: 12526</h3>
-<p>חדרים: 2<br>שטח בנוי: 79 מ"ר<br>מרפסת מקורה: 9 מ"ר<br>מרפסת פתוחה: 20 מ"ר<br>סה"כ שטח: 88 מ"ר</br></br></br></br></p>
-<strong style="color:orange;">€192,645</strong>
-</div>
-<div class="property-card">
-<img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg" style="width:100%; border-radius:10px; margin-bottom:1rem;"/>
-<h3>נכס מספר: 12527</h3>
-<p>חדרים: 1<br>שטח בנוי: 55 מ"ר<br>מרפסת מקורה: 9 מ"ר<br>מרפסת פתוחה: 17 מ"ר<br>סה"כ שטח: 64 מ"ר</br></br></br></br></p>
-<strong style="color:orange;">€152,240</strong>
-</div>
-<div class="property-card">
-<img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg" style="width:100%; border-radius:10px; margin-bottom:1rem;"/>
-<h3>נכס מספר: 12528</h3>
-<p>חדרים: 2<br/>שטח בנוי: 79 מ"ר<br/>מרפסת מקורה: 9 מ"ר<br/>מרפסת פתוחה: 22 מ"ר<br/>סה"כ שטח: 88 מ"ר</p>
-<strong style="color:orange;">€192,645</strong>
-</div>
-<div class="property-card">
-<img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg" style="width:100%; border-radius:10px; margin-bottom:1rem;"/>
-<h3>נכס מספר: 12529</h3>
-<p>חדרים: 1<br/>שטח בנוי: 58 מ"ר<br/>מרפסת מקורה: 10 מ"ר<br/>מרפסת פתוחה: 18 מ"ר<br/>סה"כ שטח: 68 מ"ר</p>
-<strong style="color:orange;">€159,940</strong>
-</div>
-<div class="property-card">
-<img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg" style="width:100%; border-radius:10px; margin-bottom:1rem;"/>
-<h3>נכס מספר: 12530</h3>
-<p>חדרים: 2<br/>שטח בנוי: 79 מ"ר<br/>מרפסת מקורה: 9 מ"ר<br/>מרפסת פתוחה: 2 מ"ר<br/>סה"כ שטח: 88 מ"ר</p>
-<strong style="color:orange;">€192,645</strong>
-</div>
-<div class="property-card">
-<div class="sold-badge">נמכר</div>
-<img alt="Apartment Image" src="final_assets/traditional-cyprus.jpg" style="width:100%; border-radius:10px; margin-bottom:1rem;"/>
-<h3>נכס מספר: 12531</h3>
-<p>חדרים: 2<br/>שטח בנוי: 97 מ"ר<br/>מרפסת מקורה: 10 מ"ר<br/>מרפסת פתוחה: 53 מ"ר<br/>סה"כ שטח: 107 מ"ר</p>
-<strong style="color:orange;">€234,238</strong>
 <script>
-    function createParticles() {
-      fetch("https://script.google.com/macros/s/AKfycb.../exec", { method: "POST", body: new FormData() });
-      const container = document.querySelector('.particles');
-      for (let i = 0; i < 50; i++) {
-        const p = document.createElement('div');
-        p.className = 'particle';
-        p.style.left = Math.random() * 100 + '%';
-        p.style.top = Math.random() * 100 + '%';
-        p.style.animationDelay = Math.random() * 6 + 's';
-        container.appendChild(p);
-      }
-    }
-
+    // Existing script for form functionality (unchanged)
     document.getElementById('leadForm').addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    const formData = new FormData();
-    formData.append('שם', document.getElementById('name').value);
-    formData.append('אימייל', document.getElementById('email').value);
-    formData.append('מספר נכס', document.getElementById('propertyNumber').value);
-    formData.append('איך שמעת עלינו', document.getElementById('referral').value);
-    formData.append('הערות', document.getElementById('extra').value);
-    formData.append('טלפון', document.getElementById('phone').value);
-
-
-
-    const btn = this.querySelector('button');
-    const originalText = btn.textContent;
-    btn.disabled = true;
-    btn.textContent = "נשלח...";
-
-    try {
-      await fetch('https://script.google.com/macros/s/AKfycbx8TYkISK-qaF-eLbgutfedu-5vl_5jd1yTvH1lFJxHVgf-otLfySwhjVYn2u7WPGCS4Q/exec', {
-        method: 'POST',
-        body: formData
-      });
-
-      const msg = document.getElementById('successMessage');
-      msg.style.display = 'block';
-
-      setTimeout(() => {
-        msg.style.display = 'none';
-      }, 5000); // hide after 5 seconds
-
-      this.reset();
-    } catch (err) {
-      alert('שגיאה בשליחה. נסה שוב.');
-    } finally {
-      btn.disabled = false;
-      btn.textContent = originalText;
-    }
-  });
-
-    document.addEventListener('DOMContentLoaded', createParticles);
-  </script>
-</div></div></div></div>
-<style>
-  /* Smoothly hide the button on mobile when scrolling */
-  @media (max-width: 768px) {
-    #latchiBtn.hide-on-scroll {
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(-10px);
-      transition: opacity 180ms ease, transform 180ms ease;
-    }
-  }
-</style>
-<script>
-  (function () {
-    const btn = document.getElementById('latchiBtn');
-    if (!btn) return;
-
-    // threshold = how many pixels of scroll before hiding
-    const THRESHOLD = 80;
-
-    function updateVisibility() {
-      const isMobile = window.innerWidth <= 768;
-      if (!isMobile) {
-        // Always show on desktop
-        btn.classList.remove('hide-on-scroll');
-        return;
-      }
-      // On mobile: hide after scrolling past threshold, show near top
-      if (window.scrollY > THRESHOLD) {
-        btn.classList.add('hide-on-scroll');
-      } else {
-        btn.classList.remove('hide-on-scroll');
-      }
-    }
-
-    // Run on load, scroll, and resize (to handle orientation change)
-    updateVisibility();
-    window.addEventListener('scroll', updateVisibility, { passive: true });
-    window.addEventListener('resize', updateVisibility);
-  })();
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('שם', document.getElementById('name').value);
+        formData.append('אימייל', document.getElementById('email').value);
+        formData.append('מספר נכס', document.getElementById('propertyNumber').value);
+        formData.append('איך שמעת עלינו', document.getElementById('referral').value);
+        formData.append('הערות', document.getElementById('extra').value);
+        formData.append('טלפון', document.getElementById('phone').value);
+        const btn = this.querySelector('button');
+        const originalText = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = "נשלח...";
+        try {
+            await fetch('https://script.google.com/macros/s/AKfycbx8TYkISK-qaF-eLbgutfedu-5vl_5jd1yTvH1lFJxHVgf-otLfySwhjVYn2u7WPGCS4Q/exec', {
+                method: 'POST',
+                body: formData
+            });
+            const msg = document.getElementById('successMessage');
+            msg.style.display = 'block';
+            setTimeout(() => {
+                msg.style.display = 'none';
+            }, 5000);
+            this.reset();
+        } catch (err) {
+            alert('שגיאה בשליחה. נסה שוב.');
+        } finally {
+            btn.disabled = false;
+            btn.textContent = originalText;
+        }
+    });
 </script>
 </body>
 </html>
